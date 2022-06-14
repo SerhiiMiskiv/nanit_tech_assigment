@@ -11,7 +11,7 @@ import SwiftUI
 struct nanit_tech_assigmentApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            WelcomeView()
         }
     }
 }
