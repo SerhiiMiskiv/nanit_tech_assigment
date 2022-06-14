@@ -13,6 +13,7 @@
 		76332F672858FF1D0064E7F1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76332F662858FF1D0064E7F1 /* Preview Assets.xcassets */; };
 		76332F6E285917EA0064E7F1 /* BirthdayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76332F6D285917EA0064E7F1 /* BirthdayView.swift */; };
 		76332F702859261F0064E7F1 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76332F6F2859261F0064E7F1 /* ImagePicker.swift */; };
+		76332F7228592FBB0064E7F1 /* PersistenseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76332F7128592FBB0064E7F1 /* PersistenseManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		76332F662858FF1D0064E7F1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		76332F6D285917EA0064E7F1 /* BirthdayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayView.swift; sourceTree = "<group>"; };
 		76332F6F2859261F0064E7F1 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		76332F7128592FBB0064E7F1 /* PersistenseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenseManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 			children = (
 				76332F5F2858FF1B0064E7F1 /* nanit_tech_assigmentApp.swift */,
 				76332F612858FF1B0064E7F1 /* WelcomeView.swift */,
+				76332F7128592FBB0064E7F1 /* PersistenseManager.swift */,
 				76332F6D285917EA0064E7F1 /* BirthdayView.swift */,
 				76332F6F2859261F0064E7F1 /* ImagePicker.swift */,
 				76332F632858FF1D0064E7F1 /* Assets.xcassets */,
@@ -147,6 +150,7 @@
 				76332F702859261F0064E7F1 /* ImagePicker.swift in Sources */,
 				76332F6E285917EA0064E7F1 /* BirthdayView.swift in Sources */,
 				76332F602858FF1B0064E7F1 /* nanit_tech_assigmentApp.swift in Sources */,
+				76332F7228592FBB0064E7F1 /* PersistenseManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

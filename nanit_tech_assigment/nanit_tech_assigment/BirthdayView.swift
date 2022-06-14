@@ -10,7 +10,7 @@ import SwiftUI
 struct BirthdayView: View {
     let name: String
     let dateOfBirth: Date
-    @State var choosenImage: UIImage
+    @Binding var choosenImage: UIImage
     @State var showSheet = false
 
     var body: some View {
@@ -40,17 +40,7 @@ struct BirthdayView: View {
             }
         }
         .sheet(isPresented: $showSheet) {
-            ImagePicker(sourceType: .photoLibrary, selectedImage: self.$choosenImage)
+            ImagePicker(sourceType: .photoLibrary, selectedImage: $choosenImage)
         }
-    }
-}
-
-private struct BirthdayView_Previews: PreviewProvider {
-    static var previews: some View {
-        BirthdayView(
-            name: "John Doe",
-            dateOfBirth: Date.now,
-            choosenImage: UIImage()
-        )
     }
 }
