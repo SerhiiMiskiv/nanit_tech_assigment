@@ -184,7 +184,7 @@ struct BirthdayView: View {
             return (checked, .month)
         }
         
-        return (10, .month)
+        return (0, .month)
     }
     
     var properAgeText: Text {

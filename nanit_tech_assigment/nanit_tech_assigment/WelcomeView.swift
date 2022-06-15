@@ -9,9 +9,11 @@ import SwiftUI
 
 struct WelcomeView: View {
     @State private var name: String = ""
-    @State private var dateOfBirth: Date = .now
+    @State private var isDateChanged = false;
+    @State private var dateOfBirth: Date = Date()
     @State private var choosenImage: UIImage?
     @State private var showSheet = false
+    
     
     var body: some View {
         let nameBinding = Binding<String>(
@@ -25,6 +27,10 @@ struct WelcomeView: View {
         let dateOfBirthBinding = Binding<Date>(
             get: { self.dateOfBirth },
             set: {
+                if !isDateChanged {
+                    self.isDateChanged = true
+                }
+                
                 self.dateOfBirth = $0
                 PersistanseManager.shared.dateOfBirth = $0
             }
@@ -65,7 +71,6 @@ struct WelcomeView: View {
                     }
                 }
                 
-                
                 NavigationLink("Show birthday screen") {
                     BirthdayView(
                         birthdayViewLayout: BirthdayViewLayout.randomConfig,
@@ -74,6 +79,8 @@ struct WelcomeView: View {
                         choosenImage: imageBinding
                     )
                 }
+                .disabled(name.isEmpty && !isDateChanged)
+                
             }
             .navigationTitle("Happy Birthday app!")
         }
