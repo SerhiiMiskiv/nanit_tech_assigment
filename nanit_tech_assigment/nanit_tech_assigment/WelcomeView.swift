@@ -9,12 +9,12 @@ import SwiftUI
 
 struct WelcomeView: View {
     @State private var name: String = ""
-    @State private var dateOfBirth: Date = Date.now
-    @State private var choosenImage: UIImage = UIImage()
+    @State private var dateOfBirth: Date = .now
+    @State private var choosenImage: UIImage?
     @State private var showSheet = false
     
     var body: some View {
-        let nameBinding = Binding(
+        let nameBinding = Binding<String>(
             get: { self.name },
             set: {
                 self.name = $0
@@ -22,7 +22,7 @@ struct WelcomeView: View {
             }
         )
         
-        let dateOfBirthBinding = Binding(
+        let dateOfBirthBinding = Binding<Date>(
             get: { self.dateOfBirth },
             set: {
                 self.dateOfBirth = $0
@@ -30,7 +30,7 @@ struct WelcomeView: View {
             }
         )
         
-        let imageBinding = Binding(
+        let imageBinding = Binding<UIImage?>(
             get: { self.choosenImage },
             set: {
                 self.choosenImage = $0
@@ -52,7 +52,7 @@ struct WelcomeView: View {
                     }
                 
                 HStack {
-                    Image(uiImage: self.choosenImage)
+                    Image(uiImage: self.choosenImage ?? UIImage())
                         .resizable()
                         .cornerRadius(50)
                         .frame(width: 100, height: 100)
@@ -68,6 +68,7 @@ struct WelcomeView: View {
                 
                 NavigationLink("Show birthday screen") {
                     BirthdayView(
+                        birthdayViewLayout: BirthdayViewLayout.randomConfig,
                         name: self.name,
                         dateOfBirth: self.dateOfBirth,
                         choosenImage: imageBinding
@@ -83,7 +84,7 @@ struct WelcomeView: View {
             
             let name = manager.name ?? ""
             let dateOfBirth = manager.dateOfBirth ?? Date.now
-            let image = manager.image ?? UIImage()
+            let image = manager.image
             
             self.name = name
             self.dateOfBirth = dateOfBirth
